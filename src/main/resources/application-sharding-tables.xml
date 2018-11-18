@@ -21,11 +21,11 @@
         <property name="password" value=""/>
     </bean>
     
-    <bean id="msgHistoryModuloTableShardingAlgorithm" class="com.unstoppedable.sharding.algorithm.MsgHistoryPreciseShardingAlgorithm" />
+    <bean id="msgHistoryPreciseShardingAlgorithm" class="com.unstoppedable.sharding.algorithm.MsgHistoryPreciseShardingAlgorithm" />
     <bean id="keyGenerator" class="com.unstoppedable.sharding.algorithm.TestKeyGenerator"/>
     <bean id="msgHistoryRangeShardingAlgorithm" class="com.unstoppedable.sharding.algorithm.MsgHistoryRangeShardingAlgorithm"/>
 
-    <sharding:standard-strategy id="msgHistoryTableShardingStrategy" sharding-column="msg_create_time" precise-algorithm-ref="msgHistoryModuloTableShardingAlgorithm" range-algorithm-ref="msgHistoryRangeShardingAlgorithm"/>
+    <sharding:standard-strategy id="msgHistoryTableShardingStrategy" sharding-column="msg_create_time" precise-algorithm-ref="msgHistoryPreciseShardingAlgorithm" range-algorithm-ref="msgHistoryRangeShardingAlgorithm"/>
 
     <sharding:data-source id="shardingDataSource">
         <sharding:sharding-rule data-source-names="demo_ds">
