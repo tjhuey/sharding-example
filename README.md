@@ -1,6 +1,6 @@
 # sharding-example
 
-使用sharding-sphere按时间分表
+使用sharding-sphere v3按时间分表
 ------
 首先创建一个库。
 CREATE SCHEMA IF NOT EXISTS demo_ds;
