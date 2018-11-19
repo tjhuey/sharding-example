@@ -30,7 +30,7 @@
     <sharding:data-source id="shardingDataSource">
         <sharding:sharding-rule data-source-names="demo_ds">
             <sharding:table-rules>
-                <sharding:table-rule logic-table="msg_history" actual-data-nodes="demo_ds.msg_history_${2018..2019}_${0..3}" table-strategy-ref="msgHistoryTableShardingStrategy" generate-key-column-name="id" key-generator-ref="keyGenerator"/>
+                <sharding:table-rule logic-table="msg_history" actual-data-nodes="demo_ds.msg_history_$->{2018..2019}_$->{0..3}" table-strategy-ref="msgHistoryTableShardingStrategy" generate-key-column-name="id" key-generator-ref="keyGenerator"/>
             </sharding:table-rules>
         </sharding:sharding-rule>
         <sharding:props>
